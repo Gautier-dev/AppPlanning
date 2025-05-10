@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node server",
+    "dev": "PORT='8080' node server",
     "build": "npm run build:client && npm run build:server",
-    "build:client": "vite build --outDir dist/client",
+    "build:client": "vite build --outDir /usr/share/nginx/html",
     "build:server": "vite build --ssr src/entry-server.js --outDir dist/server",
     "preview": "cross-env NODE_ENV=production node server"
   },
@@ -14,7 +14,11 @@
     "compression": "^1.8.0",
     "express": "^5.0.1",
     "sirv": "^3.0.1",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "pg": "^8.15.6",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
